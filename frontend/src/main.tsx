@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/museum_nuwm/">
       <AuthProvider>
         <App />
       </AuthProvider>
