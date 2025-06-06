@@ -1,6 +1,7 @@
 // frontend/src/pages/admin/categories/AdminCategoriesPage.tsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 import apiClient from '../../../config/api';
 import CategoryForm from '../../../components/admin/CategoryForm'; // Adjusted path
 import './AdminCategoriesPage.css'; // To be created
@@ -27,7 +28,7 @@ const AdminCategoriesPage: React.FC = () => {
       setCategories(response.data);
     } catch (err) {
       console.error('Failed to fetch categories:', err);
-      const errorMessage = apiClient.isAxiosError(err) && err.response?.data?.detail 
+      const errorMessage = axios.isAxiosError(err) && err.response?.data?.detail 
         ? err.response.data.detail 
         : 'Failed to load categories.';
       setError(errorMessage);
@@ -68,7 +69,7 @@ const AdminCategoriesPage: React.FC = () => {
         setCategories(prev => prev.filter(cat => cat.id !== categoryId));
       } catch (err) {
         console.error('Failed to delete category:', err);
-        const errorMessage = apiClient.isAxiosError(err) && err.response?.data?.detail 
+        const errorMessage = axios.isAxiosError(err) && err.response?.data?.detail 
           ? err.response.data.detail 
           : 'Failed to delete category.';
         toast.error(errorMessage);
