@@ -1,0 +1,75 @@
+/* frontend/src/pages/public/HomePage.css */
+
+.art-collection-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.art-collection-title {
+  font-family: var(--font-family-serif);
+  color: var(--primary-color);
+  font-size: 2.5rem; /* Larger title for the page */
+  margin-bottom: 2.5rem !important; /* Override Bulma's mb-5 if needed */
+}
+
+.art-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 100%; /* Ensures cards in a row have the same height if content varies slightly */
+  display: flex;
+  flex-direction: column;
+}
+
+.art-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.art-card .card-image .image img {
+  border-top-left-radius: 8px; /* Match card's border-radius */
+  border-top-right-radius: 8px;
+  max-height: 250px; /* Or a fixed height to ensure uniformity */
+  object-fit: cover; /* Already in inline style, but good to have in CSS */
+}
+
+.art-card .card-content {
+  flex-grow: 1; /* Allows content to expand and push footer down */
+  padding: 1rem; /* Slightly less padding than global card if desired */
+}
+
+.art-card .media-content .title {
+  font-size: 1.25rem; /* Adjust title size within card */
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.art-card .media-content .subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.75rem;
+}
+.art-card .media-content .subtitle a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+.art-card .media-content .subtitle a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+
+.art-card .content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem; /* Space before the date */
+}
+
+.art-card .content small {
+  color: #757575;
+  display: block; /* Ensure it takes its own line or adjust as needed */
+  margin-top: 0.5rem;
+}
+
+/* Styling for the "No art pieces" notification */
+.no-art-notification .title {
+  color: var(--text-color); /* Or a specific warning text color */
+}

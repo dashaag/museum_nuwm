@@ -1,0 +1,99 @@
+/* frontend/src/pages/admin/categories/AdminCategoriesPage.css */
+.admin-categories-page .level {
+  margin-bottom: 2rem;
+}
+
+.admin-categories-page .title {
+  font-family: var(--font-family-serif);
+  color: var(--primary-color);
+}
+
+.admin-categories-page .button.is-primary {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+}
+.admin-categories-page .button.is-primary:hover {
+  background-color: #4caaa8; /* Darker teal */
+}
+
+.categories-list-container {
+  background-color: var(--background-color-light);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  margin-top: 2rem;
+}
+
+.categories-list-container .subtitle {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.categories-list-container .table th {
+  color: var(--text-color-dark);
+}
+
+.categories-list-container .table td {
+  vertical-align: middle;
+}
+
+.categories-list-container .table .buttons.are-small .button {
+  margin-bottom: 0; /* Prevent extra space in table cells */
+}
+
+.categories-list-container .table .button .icon {
+  margin-right: 0.25em !important; /* Bulma default is a bit wide for small buttons */
+}
+
+/* Ensure CategoryForm has some space when it appears */
+.admin-categories-page .category-form-container {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive table considerations (optional, Bulma handles some of this) */
+@media screen and (max-width: 768px) {
+  .admin-categories-page .level-left,
+  .admin-categories-page .level-right {
+    display: block;
+    text-align: center;
+  }
+  .admin-categories-page .level-right .button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .categories-list-container .table thead {
+    display: none; /* Hide table headers on small screens, show data labels instead if needed */
+  }
+  .categories-list-container .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+  }
+  .categories-list-container .table tbody td {
+    display: block;
+    text-align: right;
+    border-bottom: none;
+    position: relative;
+    padding-left: 50%; /* Make space for the pseudo-element label */
+  }
+  .categories-list-container .table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    width: 45%;
+    padding-right: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .categories-list-container .table tbody td:last-child {
+     /* Ensure buttons stack nicely */
+    text-align: center;
+  }
+  .categories-list-container .table tbody td .buttons.are-small {
+    justify-content: center;
+  }
+}

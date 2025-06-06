@@ -1,0 +1,205 @@
+:root {
+  --primary-color: #3A506B; /* A deep blue-grey */
+  --secondary-color: #5BC0BE; /* A teal accent */
+  --accent-color: #FFC107; /* A warm gold for highlights */
+  --background-color: #F7F9FB; /* A very light grey for background */
+  --text-color: #333333; /* Standard dark grey for text */
+  --text-light-color: #FFFFFF;
+  --border-color: #E0E0E0; /* Light grey for borders */
+  --card-background: #FFFFFF;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: "Georgia", "Times New Roman", serif; /* For headings or special text */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans-serif);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#root {
+  /* max-width: 1280px; */ /* Consider removing or adjusting for full-width layouts */
+  margin: 0 auto;
+  /* padding: 2rem; */ /* Padding will be handled by specific components or layouts */
+  /* text-align: center; */ /* Remove global text-align center */
+}
+
+/* General link styling */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Button styling (basic global button, can be overridden by component-specific styles) */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: var(--text-light-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #2c3e50; /* Darker shade of primary */
+}
+
+.button.is-light { /* For Bulma compatibility or similar */
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+.button.is-light:hover {
+  background-color: #bdc3c7;
+}
+
+/* Keep existing .logo and animation styles for now, or remove if not used */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #2980b9aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #2ecc71aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Update .card style */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 1.5rem; /* Adjusted padding */
+  margin-bottom: 1.5rem; /* Add some margin between cards */
+  /* text-align: left; */ /* Cards usually have left-aligned text */
+}
+
+/* Utility classes */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.title {
+  font-family: var(--font-family-serif); /* Example: use serif for titles */
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.title.is-4 { /* Example for Bulma compatibility */
+  font-size: 1.5rem;
+}
+.title.is-5 {
+  font-size: 1.25rem;
+}
+
+.subtitle {
+  color: #95a5a6; /* A lighter grey for subtitles */
+}
+.subtitle.is-6 { /* Example for Bulma compatibility */
+  font-size: 1rem;
+}
+
+.has-text-centered {
+  text-align: center !important;
+}
+.has-text-danger {
+  color: #e74c3c !important; /* A deep red for danger */
+}
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+/* Notification styles (basic, can be expanded) */
+.notification {
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.notification.is-warning {
+  background-color: #f7d2c4; /* Light orange for warning */
+  color: #a94442;
+  border: 1px solid #f1c40f;
+}
+.notification.is-info { /* For progress bar parent or other info messages */
+   background-color: #d1ecf1;
+   color: #0c5460;
+   border: 1px solid #bee5eb;
+}
+
+/* Progress bar basic styling */
+progress.progress {
+  display: block;
+  width: 100%;
+  height: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--border-color);
+}
+
+progress.progress::-webkit-progress-bar {
+  background-color: var(--border-color);
+}
+
+progress.progress::-webkit-progress-value {
+  background-color: var(--secondary-color);
+  transition: width 0.5s ease;
+}
+
+progress.progress::-moz-progress-bar {
+  background-color: var(--secondary-color);
+  transition: width 0.5s ease;
+}
+
+progress.progress.is-large { /* For Bulma compatibility */
+  height: 1.5rem;
+}
+/* progress.progress.is-info - already handled by secondary color */
+
+.read-the-docs {
+  color: #888;
+}

@@ -1,0 +1,96 @@
+/* frontend/src/components/layout/Navbar.css */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand .navbar-item {
+  color: var(--text-light-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--font-family-serif);
+}
+
+.navbar-brand .navbar-item:hover {
+  color: var(--secondary-color);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-start,
+.navbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  color: var(--text-light-color);
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-item:hover,
+.navbar-item.is-active { /* For active links, if you add that logic */
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+}
+
+/* Style the logout button specifically if it's a button tag */
+.navbar-item.button {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  border: none;
+  padding: 0.5rem 1rem; /* Ensure consistent padding */
+}
+
+.navbar-item.button:hover {
+  background-color: #4caaa8; /* Darker teal */
+}
+
+/* Responsive considerations for Navbar (simple example) */
+@media (max-width: 768px) {
+  .navbar-menu {
+    /* Could hide menu items and show a burger icon, but for now just stack them */
+    /* display: none; */ /* Example: if implementing a burger menu */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    /* display: none; */ /* Initially hidden for toggle */
+  }
+
+  .navbar-menu.is-active { /* Class to toggle for mobile */
+      display: flex;
+  }
+
+  .navbar-start,
+  .navbar-end {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-item {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-item:last-child {
+    margin-bottom: 0;
+  }
+}
+

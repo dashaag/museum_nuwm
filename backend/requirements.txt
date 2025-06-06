@@ -1,0 +1,9 @@
+fastapi[all]==0.109.0 # Includes uvicorn, pydantic, starlette etc.
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9 # For PostgreSQL connection
+alembic==1.13.1
+python-jose[cryptography]==3.3.0 # For JWT
+passlib[bcrypt]==1.7.4 # For password hashing
+python-dotenv==1.0.1 # For .env file
+email-validator==2.1.0.post1 # For email validation in Pydantic models
+greenlet==3.0.3 # Often a dependency for SQLAlchemy async or gevent-based workers

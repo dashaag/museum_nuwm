@@ -1,0 +1,77 @@
+/* frontend/src/components/admin/CategoryForm.css */
+.category-form-container {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  margin-bottom: 2rem; /* Space below the form */
+}
+
+.category-form-container.editing {
+  border-left: 5px solid var(--accent-color); /* Example: orange accent for editing */
+}
+
+.category-form-container.creating {
+  border-left: 5px solid var(--secondary-color); /* Example: teal accent for creating */
+}
+
+.form-title {
+  font-family: var(--font-family-serif);
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.category-form .label {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.category-form .input,
+.category-form .textarea {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-form .input:focus,
+.category-form .textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px var(--secondary-color-transparent); /* Using a transparent version */
+}
+
+.category-form .button.is-primary {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  font-weight: bold;
+}
+.category-form .button.is-primary:hover:not(:disabled) {
+  background-color: #4caaa8; /* Darker teal */
+}
+
+.category-form .button.is-light {
+  background-color: var(--background-color-light);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+.category-form .button.is-light:hover:not(:disabled) {
+  background-color: var(--border-color);
+}
+
+.category-form .field.is-grouped {
+  margin-top: 1.5rem;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.category-form .field.is-grouped .control:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+/* Error notification styling (if not already globally handled well) */
+.category-form-container .notification.is-danger.is-light {
+    background-color: #fdecea; /* Light red */
+    color: #d9534f; /* Red text */
+    border-left: 4px solid #d9534f;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
